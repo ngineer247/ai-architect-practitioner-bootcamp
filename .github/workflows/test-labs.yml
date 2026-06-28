@@ -1,0 +1,47 @@
+name: Lab Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-labs:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lab:
+          - path: labs/chapter-03-prompt-engineering/lab1-prompt-template
+            name: ch03-prompt-template
+          - path: labs/chapter-07-agentic-ai/lab1-agent-loop
+            name: ch07-agent-loop
+          - path: labs/chapter-18-enterprise-patterns/lab1-ai-gateway
+            name: ch18-ai-gateway
+          - path: labs/chapter-19-security/lab2-tool-authorization
+            name: ch19-tool-authorization
+          - path: labs/chapter-19-security/lab4-rag-permissions
+            name: ch19-rag-permissions
+          - path: labs/chapter-21-finops/lab2-workflow-cost
+            name: ch21-workflow-cost
+          - path: labs/chapter-24-capstone/lab4-incident-agent
+            name: ch24-capstone
+
+    name: ${{ matrix.lab.name }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ${{ matrix.lab.path }}/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r ${{ matrix.lab.path }}/requirements.txt
+
+      - name: Run tests
+        run: pytest ${{ matrix.lab.path }} -v --tb=short
+        env:
+          PYTHONPATH: ${{ matrix.lab.path }}
