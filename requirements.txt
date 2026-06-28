@@ -1,0 +1,34 @@
+# Core AI and LLM
+anthropic>=0.40.0
+openai>=1.50.0
+boto3>=1.35.0
+botocore>=1.35.0
+
+# Agent orchestration
+langgraph>=0.2.0
+langgraph-checkpoint-postgres>=2.0.0
+
+# Vector databases
+pgvector>=0.3.0
+psycopg2-binary>=2.9.9
+
+# HTTP and async
+fastapi>=0.115.0
+uvicorn>=0.30.0
+aiohttp>=3.10.0
+httpx>=0.27.0
+
+# Data and config
+pyyaml>=6.0.1
+pydantic>=2.8.0
+
+# Tokenization and ML
+tiktoken>=0.7.0
+
+# Testing
+pytest>=8.3.0
+pytest-asyncio>=0.23.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.7.0

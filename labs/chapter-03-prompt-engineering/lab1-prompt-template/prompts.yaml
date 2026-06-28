@@ -1,0 +1,80 @@
+prompts:
+  - name: support_policy_answer
+    version: "1.4.2"
+    status: approved
+    owner: support-platform
+    description: >
+      Draft a policy-grounded support response.
+      Uses only retrieved context — does not hallucinate.
+    variables:
+      - user_question
+      - retrieved_context
+    rollback_version: "1.4.1"
+    template: |
+      You are a support policy assistant.
+      Using only the following context, answer the customer question.
+      Do not make up information not present in the context.
+      If the context does not contain enough information, say so and escalate.
+
+      CONTEXT:
+      {{retrieved_context}}
+
+      QUESTION:
+      {{user_question}}
+
+      Respond in this format:
+      - Direct answer (or escalation statement)
+      - Supporting policy reference
+      - Next steps
+
+  - name: incident_brief
+    version: "2.1.0"
+    status: approved
+    owner: operations-platform
+    description: Generate a structured executive incident brief.
+    variables:
+      - incident_id
+      - symptom
+      - evidence_summary
+      - customer_impact
+      - recommended_action
+    rollback_version: "2.0.3"
+    template: |
+      Generate a concise executive incident brief.
+
+      INCIDENT: {{incident_id}}
+      SYMPTOM: {{symptom}}
+
+      EVIDENCE:
+      {{evidence_summary}}
+
+      CUSTOMER IMPACT:
+      {{customer_impact}}
+
+      RECOMMENDED ACTION:
+      {{recommended_action}}
+
+      Write a 3-paragraph executive brief:
+      1. Situation and scope
+      2. Root cause hypothesis and evidence
+      3. Recommended next steps and approval requirements
+
+  - name: classification_prompt
+    version: "1.0.0"
+    status: draft
+    owner: triage-platform
+    description: Classify incoming incident type for routing.
+    variables:
+      - incident_text
+    template: |
+      Classify this incident into exactly one category:
+      - firmware_incident
+      - connectivity_incident
+      - configuration_incident
+      - hardware_incident
+      - unknown
+
+      INCIDENT:
+      {{incident_text}}
+
+      Respond with only the category name.

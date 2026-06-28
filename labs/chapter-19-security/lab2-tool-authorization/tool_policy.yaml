@@ -1,0 +1,58 @@
+tools:
+  - name: get_device_telemetry
+    risk_tier: 2
+    type: read
+    allowed_roles: [support_l1, support_l2, operations, support_manager]
+    approval_required: false
+    description: "Read-only: retrieve live device telemetry snapshot"
+
+  - name: search_incidents
+    risk_tier: 1
+    type: read
+    allowed_roles: [support_l1, support_l2, operations, support_manager, analyst]
+    approval_required: false
+    description: "Read-only: search historical incident records"
+
+  - name: get_runbook
+    risk_tier: 1
+    type: read
+    allowed_roles: [support_l1, support_l2, operations, support_manager, analyst]
+    approval_required: false
+    description: "Read-only: retrieve troubleshooting runbook"
+
+  - name: create_support_ticket
+    risk_tier: 3
+    type: write
+    allowed_roles: [support_l2, operations, support_manager]
+    approval_required: false
+    description: "Write: create a new support ticket"
+
+  - name: issue_refund
+    risk_tier: 4
+    type: write
+    allowed_roles: [support_manager]
+    approval_required: true
+    description: "Write: issue a customer refund — requires manager approval"
+
+  - name: send_customer_notification
+    risk_tier: 4
+    type: write
+    allowed_roles: [support_manager, operations]
+    approval_required: true
+    description: "Write: send notification to affected customers"
+
+  - name: execute_firmware_rollback
+    risk_tier: 5
+    type: write
+    allowed_roles: [operations]
+    approval_required: true
+    fail_closed: true
+    description: "Write: trigger firmware rollback — requires release engineering approval"
+
+  - name: update_production_config
+    risk_tier: 5
+    type: write
+    allowed_roles: [operations]
+    approval_required: true
+    fail_closed: true
+    description: "Write: update production configuration — requires approval"

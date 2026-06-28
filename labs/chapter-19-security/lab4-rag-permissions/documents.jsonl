@@ -1,0 +1,4 @@
+{"doc_id":"doc-001","tenant_id":"tenant-a","classification":"internal","title":"Refund Policy v4","content":"Refunds accepted within 30 days.","owner":"policy-team"}
+{"doc_id":"doc-002","tenant_id":"tenant-b","classification":"confidential","title":"Contract Schedule","content":"Tenant B special terms.","owner":"legal-team"}
+{"doc_id":"doc-003","tenant_id":"shared","classification":"public","title":"FAQ","content":"General support FAQ.","owner":"support-team"}
+{"doc_id":"doc-004","tenant_id":"tenant-a","classification":"restricted","title":"Device Keys","content":"Restricted signing keys.","owner":"security-team"}
