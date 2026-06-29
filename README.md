@@ -1,8 +1,7 @@
-# The AI Architect & Practitioner Bootcamp
+# The AI Architect & Practitioner Bootcamp - DRAFT
 
 **A production-first guide to designing, building, and operating enterprise AI systems.**
 
-[![Lab Tests](https://github.com/desai2054/ai-architect-practitioner-bootcamp/actions/workflows/test-labs.yml/badge.svg)](https://github.com/desai2054/ai-architect-practitioner-bootcamp/actions/workflows/test-labs.yml)
 
 ---
 
