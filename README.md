@@ -49,9 +49,9 @@ This book is written for practitioners who build real systems, not for people wh
 
 ## The Author
 
-**Pratik Desai** is a Senior AI Solutions Architect and Technology Executive with 25+ years of production systems engineering experience across payments, mobile platforms, IoT, enterprise software, and AI. His background spans DSP, control theory, distributed systems, ML, data engineering, and enterprise architecture.
+**Pratik Desai** is a Senior AI Solutions Architect and Technology Executive with 25+ years of production systems engineering experience across payments, mobile platforms, IoT, enterprise software, and AI. His background spans DSP, control theory, distributed systems, ML, data engineering, governance and enterprise architecture.
 
-His career includes engineering leadership at Motorola Mobility, Google, Lenovo, and 360fly, as well as independent consulting on enterprise AI solutions architecture.
+His career includes engineering leadership at Motorola Mobility, Google, Lenovo, 360fly, Xevo, Verifone as well as independent consulting on enterprise AI solutions architecture.
 
 The production patterns in this book come from designing, building, and operating five enterprise AI systems on a connected device management platform spanning dozens of countries under PCI-DSS, SOC 2, and GDPR compliance requirements:
 
