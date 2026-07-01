@@ -1,0 +1,8 @@
+[book]
+title = "The AI Architect & Practitioner Bootcamp"
+authors = ["Pratik Desai"]
+description = "A production-first guide to designing, building, and operating enterprise AI systems."
+src = "."
+
+[build]
+build-dir = "book"
